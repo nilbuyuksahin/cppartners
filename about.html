@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Catalyst People Partners — our team, story and approach to executive search and HR strategy.">
+<title>About Us | Catalyst People Partners</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0B213C;--teal:#2A817B;--blue:#286986;--teal-light:#E8F4F3;--gray:#F7F8FA;--text:#1A1A2E;--muted:#5F6B7A;--border:#E2E8F0;--white:#FFFFFF}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.7}
+  a{text-decoration:none;color:inherit}
+
+  nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 5%}
+  .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo img{height:36px;width:auto}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-cta{background:var(--navy);color:var(--white)!important;padding:10px 20px;border-radius:6px;font-weight:600!important}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:72px 5%}
+  .page-hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px}
+  .breadcrumb a{color:rgba(255,255,255,0.5)}
+  .page-hero h1{font-size:40px;font-weight:700;line-height:1.2;margin-bottom:18px;letter-spacing:-0.5px}
+  .page-hero h1 em{color:#7ECDC8;font-style:normal}
+  .page-hero p{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.8}
+  .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:20px;text-align:center}
+  .stat-num{font-size:28px;font-weight:700;color:#7ECDC8}
+  .stat-label{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px}
+
+  .section-tag{font-size:13px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .section-title{font-size:34px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:-0.5px}
+  .section-sub{font-size:17px;color:var(--muted);margin-bottom:48px;max-width:600px}
+
+  /* STORY */
+  .story{padding:80px 5%;background:var(--white)}
+  .story-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .story p{font-size:16px;color:var(--muted);margin-bottom:20px;line-height:1.9}
+  .story-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+  .highlight{background:var(--gray);border-radius:12px;padding:20px}
+  .highlight h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .highlight p{font-size:13px;color:var(--muted);margin:0}
+  .story-visual{background:var(--navy);border-radius:20px;padding:40px;color:var(--white)}
+  .story-visual h3{font-size:18px;font-weight:700;margin-bottom:24px}
+  .timeline-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .timeline-item:last-child{border-bottom:none}
+  .t-year{font-size:13px;font-weight:700;color:#7ECDC8;min-width:40px;margin-top:2px}
+  .t-text{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6}
+
+  /* VALUES */
+  .values{padding:80px 5%;background:var(--gray)}
+  .values-inner{max-width:1200px;margin:auto}
+  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .value-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:32px;transition:.2s}
+  .value-card:hover{border-color:var(--teal);transform:translateY(-3px)}
+  .value-icon{font-size:32px;margin-bottom:16px}
+  .value-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
+  .value-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+  /* TEAM */
+  .team{padding:80px 5%;background:var(--white)}
+  .team-inner{max-width:1200px;margin:auto}
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+  .team-card{text-align:center}
+  .team-photo{width:120px;height:120px;border-radius:50%;background:var(--gray);margin:0 auto 16px;overflow:hidden;border:3px solid var(--border)}
+  .team-photo img{width:100%;height:100%;object-fit:cover}
+  .team-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:36px;background:var(--teal-light)}
+  .team-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .team-card .role{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:6px}
+  .team-card .email{font-size:13px;color:var(--muted)}
+  .team-card .email a{color:var(--teal)}
+
+  /* APPROACH */
+  .approach{padding:80px 5%;background:var(--navy);color:var(--white)}
+  .approach-inner{max-width:1200px;margin:auto}
+  .approach h2{font-size:34px;font-weight:700;margin-bottom:14px;letter-spacing:-0.5px}
+  .approach .sub{font-size:17px;color:rgba(255,255,255,0.7);margin-bottom:48px;max-width:600px}
+  .approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .approach-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:28px}
+  .approach-card h4{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px}
+  .approach-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+  .approach-num{font-size:28px;font-weight:700;color:#7ECDC8;margin-bottom:12px}
+
+  /* OFFICES */
+  .offices{padding:80px 5%;background:var(--gray)}
+  .offices-inner{max-width:1200px;margin:auto}
+  .offices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .office-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:30px}
+  .office-flag{font-size:32px;margin-bottom:16px}
+  .office-card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .office-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+  footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 5% 28px}
+  .footer-inner{max-width:1200px;margin:auto}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-col h4{font-size:13px;font-weight:700;color:var(--white);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{margin-bottom:10px}
+  .footer-col ul li a{font-size:14px;color:rgba(255,255,255,0.6);transition:.2s}
+  .footer-col ul li a:hover{color:var(--white)}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;font-size:13px}
+
+  @media(max-width:900px){
+    .page-hero-inner,.story-inner,.footer-top{grid-template-columns:1fr}
+    .values-grid,.approach-grid,.offices-grid{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-stats{grid-template-columns:repeat(2,1fr)}
+    .story-highlights{grid-template-columns:1fr}
+    .page-hero h1{font-size:30px}
+    .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px 5%;border-bottom:1px solid var(--border);gap:16px}
+    .nav-links.open{display:flex}
+    .hamburger{display:flex}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Catalyst People Partners">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="for-candidates.html">For Candidates</a>
+      <a href="for-employers.html">For Employers</a>
+      <a href="about.html" style="color:var(--navy);font-weight:700">About</a>
+      <a href="contact.html" class="nav-cta">Get in Touch</a>
+    </div>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="breadcrumb"><a href="index.html">Home</a> › <span style="color:rgba(255,255,255,0.8)">About Us</span></p>
+      <h1>A Boutique Firm Built on <em>Real Experience</em></h1>
+      <p>Founded in 2024, we bring together expertise from consultancy, academia and senior leadership roles — combining global best practices with deep understanding of emerging HR dynamics.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">2024</div><div class="stat-label">Year founded</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Global offices</div></div>
+      <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Engagements delivered</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Industries served</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div>
+      <p class="section-tag">Our Story</p>
+      <h2 class="section-title">Why We Built CPP</h2>
+      <p>We started Catalyst People Partners because we saw a gap in the market — too many executive search firms that move fast but don't think deeply, or think deeply but move too slowly.</p>
+      <p>Our founding team has sat on both sides of the table: as HR leaders in industry, as consultants advising boards, and as academics studying what makes organisations truly work. That combination is rare — and it's what makes our advice different.</p>
+      <p>We built CPP to be the firm we always wished existed: one that combines the speed and precision of a boutique with the intellectual rigour of a top-tier consultancy.</p>
+      <div class="story-highlights">
+        <div class="highlight"><h4>🌍 3 Continents</h4><p>Active networks in Turkey, UAE and the United Kingdom</p></div>
+        <div class="highlight"><h4>🏭 6 Industries</h4><p>Deep expertise across tech, FMCG, finance, retail, energy and more</p></div>
+        <div class="highlight"><h4>🎓 Academic Roots</h4><p>Grounded in psychology, organisational behaviour and leadership science</p></div>
+        <div class="highlight"><h4>⚡ Boutique Speed</h4><p>Senior attention on every mandate — no delegation to junior researchers</p></div>
+      </div>
+    </div>
+    <div class="story-visual">
+      <h3>Our milestones</h3>
+      <div class="timeline-item"><div class="t-year">2024</div><div class="t-text">CPP founded — Istanbul headquarters established</div></div>
+      <div class="timeline-item"><div class="t-year">2024</div><div class="t-text">First 10 executive placements completed across Turkey</div></div>
+      <div class="timeline-item"><div class="t-year">2024</div><div class="t-text">UAE office opened — Sharjah Media City</div></div>
+      <div class="timeline-item"><div class="t-year">2024</div><div class="t-text">London office established — SE1</div></div>
+      <div class="timeline-item"><div class="t-year">2025</div><div class="t-text">35+ engagements delivered for 10+ businesses across 3 regions</div></div>
+      <div class="timeline-item"><div class="t-year">2025</div><div class="t-text">Catalyst Lead Assessment model launched</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="values-inner">
+    <p class="section-tag">How We Work</p>
+    <h2 class="section-title">Our Principles</h2>
+    <p class="section-sub">Six things that guide every engagement we take on.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">📋</div>
+        <h3>Always Facts First</h3>
+        <p>Every engagement starts with a rigorous, fact-based assessment of the situation. We don't skip this step — even when clients think they already know the answer.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🏗️</div>
+        <h3>Implementation Mindset</h3>
+        <p>We design solutions that can actually be executed in the real world — not perfect-on-paper recommendations that gather dust after the presentation.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Client-Based Recommendations</h3>
+        <p>Initial recommendations are always prepared jointly with client teams. You know your business — we bring the expertise to shape it.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔍</div>
+        <h3>Critical Thinking</h3>
+        <p>We challenge assumptions — including our own. Quality control is built into every deliverable, not added at the end.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🧠</div>
+        <h3>Organisational Understanding</h3>
+        <p>We bring deep knowledge of how organisations actually work — the formal structures and the informal dynamics that determine outcomes.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🚀</div>
+        <h3>Practical Problem Solving</h3>
+        <p>When something unexpected comes up — and it always does — we find a way through. Adaptability is a core part of how we operate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+  <div class="team-inner">
+    <p class="section-tag">Our People</p>
+    <h2 class="section-title">Meet the Team</h2>
+    <p class="section-sub">A small, senior team — everyone you work with is directly involved in your engagement.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="team-nil.jpg" alt="Nil Buyuksahin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none">👤</div>
+        </div>
+        <h3>Nil Büyükşahin</h3>
+        <div class="role">Founder & Consultant</div>
+        <div class="email"><a href="mailto:nil@cppartners.co">nil@cppartners.co</a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="team-yeliz.jpg" alt="Yeliz Kurt" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none">👤</div>
+        </div>
+        <h3>Yeliz Kurt</h3>
+        <div class="role">Consultant</div>
+        <div class="email">&nbsp;</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="team-nur.jpg" alt="Nur Haslak" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none">👤</div>
+        </div>
+        <h3>Nur Haslak</h3>
+        <div class="role">Business Development Specialist</div>
+        <div class="email"><a href="mailto:nurhaslak@cppartners.co">nurhaslak@cppartners.co</a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="team-omer.jpg" alt="Ömer Turker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none">👤</div>
+        </div>
+        <h3>Ömer Turker</h3>
+        <div class="role">Junior Consultant</div>
+        <div class="email">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="approach-inner">
+    <p style="font-size:13px;font-weight:600;color:#7ECDC8;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Our Methodology</p>
+    <h2>How We Deliver Results</h2>
+    <p class="sub">Our approach combines the best of management consulting rigour with the speed and personal attention of a boutique firm.</p>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-num">01</div>
+        <h4>Breadth of Experience</h4>
+        <p>Our team draws on backgrounds spanning consultancy, academia, in-house HR leadership and executive roles — giving us a multi-dimensional perspective most firms lack.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">02</div>
+        <h4>Project Management & Delivery</h4>
+        <p>We run every engagement with the discipline of a project — clear milestones, regular check-ins, and accountability to agreed outcomes.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">03</div>
+        <h4>Practical Solutions</h4>
+        <p>Experience and advice from industry leaders are actively integrated into every recommendation — so what we propose can actually be implemented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICES -->
+<section class="offices">
+  <div class="offices-inner">
+    <p class="section-tag">Global Presence</p>
+    <h2 class="section-title">Our Offices</h2>
+    <p class="section-sub">Three offices across three continents — with local knowledge and global reach.</p>
+    <div class="offices-grid">
+      <div class="office-card">
+        <div class="office-flag">🇹🇷</div>
+        <h3>Istanbul, Turkey</h3>
+        <p>Levent, Karanfil Sokağı No:13<br>Beşiktaş / İstanbul<br><br>
+        <a href="mailto:nil@cppartners.co" style="color:var(--teal);font-size:14px">nil@cppartners.co</a></p>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">🇦🇪</div>
+        <h3>Sharjah, UAE</h3>
+        <p>Sharjah Media City<br>Shams Free Zone</p>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">🇬🇧</div>
+        <h3>London, UK</h3>
+        <p>SE1, Crosby Row 19<br>London</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img src="logo.png" alt="Catalyst People Partners" style="height:28px;filter:brightness(0) invert(1);margin-bottom:14px">
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7">Global boutique HR consultancy — executive search, HR strategy and leadership development across Turkey, UAE and UK.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="for-candidates.html">For Candidates</a></li>
+          <li><a href="for-employers.html">For Employers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:nil@cppartners.co">nil@cppartners.co</a></li>
+          <li><a href="contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Catalyst People Partners. All rights reserved.</span>
+      <span>cppartners.co</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

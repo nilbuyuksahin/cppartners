@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Executive Search, HR Strategy, Momentum Map and Leadership Academy — Catalyst People Partners.">
+<title>Services | Catalyst People Partners</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0B213C;--teal:#2A817B;--blue:#286986;--teal-light:#E8F4F3;--gray:#F7F8FA;--text:#1A1A2E;--muted:#5F6B7A;--border:#E2E8F0;--white:#FFFFFF}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.7}
+  a{text-decoration:none;color:inherit}
+
+  nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 5%}
+  .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo img{height:36px;width:auto}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-cta{background:var(--navy);color:var(--white)!important;padding:10px 20px;border-radius:6px;font-weight:600!important}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:72px 5%}
+  .page-hero-inner{max-width:1200px;margin:auto}
+  .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px}
+  .breadcrumb a{color:rgba(255,255,255,0.5)}
+  .page-hero h1{font-size:40px;font-weight:700;line-height:1.2;margin-bottom:18px;letter-spacing:-0.5px;max-width:700px}
+  .page-hero h1 em{color:#7ECDC8;font-style:normal}
+  .page-hero p{font-size:17px;color:rgba(255,255,255,0.75);max-width:600px}
+
+  .service-nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:68px;z-index:90}
+  .service-nav-inner{max-width:1200px;margin:auto;display:flex;gap:0;overflow-x:auto}
+  .snav-link{padding:16px 24px;font-size:14px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap;transition:.2s}
+  .snav-link:hover,.snav-link.active{color:var(--teal);border-bottom-color:var(--teal)}
+
+  .section-tag{font-size:13px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .section-title{font-size:34px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:-0.5px}
+  .section-sub{font-size:17px;color:var(--muted);margin-bottom:48px;max-width:640px}
+
+  .svc-section{padding:80px 5%}
+  .svc-section:nth-child(even){background:var(--gray)}
+  .svc-section:nth-child(odd){background:var(--white)}
+  .svc-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .svc-inner.reverse{direction:rtl}
+  .svc-inner.reverse>*{direction:ltr}
+  .svc-label{display:inline-block;background:var(--teal-light);color:var(--teal);font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase}
+  .svc-section h2{font-size:30px;font-weight:700;color:var(--navy);margin-bottom:16px;letter-spacing:-0.3px}
+  .svc-section p{font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.8}
+  .offering-list{list-style:none;margin-bottom:32px}
+  .offering-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--text)}
+  .offering-list li:last-child{border-bottom:none}
+  .check{color:var(--teal);font-weight:700;font-size:16px;margin-top:2px;flex-shrink:0}
+  .li-text strong{display:block;font-weight:600;color:var(--navy);margin-bottom:2px}
+  .li-text span{font-size:14px;color:var(--muted)}
+  .btn-cta{display:inline-block;background:var(--teal);color:var(--white);padding:13px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:.2s}
+  .btn-cta:hover{background:#1f6460}
+  .btn-outline{display:inline-block;border:1.5px solid var(--border);color:var(--navy);padding:13px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:.2s;margin-left:12px}
+  .btn-outline:hover{border-color:var(--teal)}
+
+  .visual-card{background:var(--navy);border-radius:20px;padding:40px;color:var(--white)}
+  .visual-card.teal-bg{background:var(--teal)}
+  .visual-card.blue-bg{background:var(--blue)}
+  .visual-card h3{font-size:20px;font-weight:700;margin-bottom:24px;color:var(--white)}
+  .vc-stat{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .vc-stat:last-child{border-bottom:none}
+  .vc-num{font-size:28px;font-weight:700;color:#7ECDC8;min-width:56px}
+  .vc-label{font-size:14px;color:rgba(255,255,255,0.75)}
+  .academy-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .academy-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.85)}
+  .dimension-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .dim-card{background:rgba(255,255,255,0.08);border-radius:10px;padding:14px;text-align:center}
+  .dim-icon{font-size:22px;margin-bottom:6px}
+  .dim-label{font-size:12px;color:rgba(255,255,255,0.8);font-weight:600}
+
+  footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 5% 28px}
+  .footer-inner{max-width:1200px;margin:auto}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-col h4{font-size:13px;font-weight:700;color:var(--white);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{margin-bottom:10px}
+  .footer-col ul li a{font-size:14px;color:rgba(255,255,255,0.6);transition:.2s}
+  .footer-col ul li a:hover{color:var(--white)}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;font-size:13px}
+
+  @media(max-width:900px){
+    .svc-inner{grid-template-columns:1fr;gap:40px}
+    .svc-inner.reverse{direction:ltr}
+    .page-hero h1{font-size:30px}
+    .footer-top{grid-template-columns:1fr}
+    .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px 5%;border-bottom:1px solid var(--border);gap:16px}
+    .nav-links.open{display:flex}
+    .hamburger{display:flex}
+    .academy-grid,.dimension-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Catalyst People Partners">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html" style="color:var(--navy);font-weight:700">Services</a>
+      <a href="for-candidates.html">For Candidates</a>
+      <a href="for-employers.html">For Employers</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Get in Touch</a>
+    </div>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> › <span style="color:rgba(255,255,255,0.8)">Services</span></p>
+    <h1>Everything You Need to <em>Build & Lead</em> a Great Organisation</h1>
+    <p>Four integrated service lines — from finding the right leaders to developing the ones you already have.</p>
+  </div>
+</section>
+
+<div class="service-nav">
+  <div class="service-nav-inner">
+    <a href="#executive-search" class="snav-link active">Executive Search</a>
+    <a href="#hr-strategy" class="snav-link">HR Strategy</a>
+    <a href="#momentum-map" class="snav-link">Momentum Map</a>
+    <a href="#leadership-academy" class="snav-link">Leadership Academy</a>
+    <a href="#catalyst-lead" class="snav-link">Catalyst Lead</a>
+  </div>
+</div>
+
+<!-- 01 Executive Search -->
+<section class="svc-section" id="executive-search">
+  <div class="svc-inner">
+    <div>
+      <div class="svc-label">01 — Executive Search</div>
+      <h2>Find Leaders Who Actually Move Things Forward</h2>
+      <p>We identify, attract and place exceptional talent at C-suite, VP and senior manager level. Every search is run personally by a senior consultant — not delegated to a researcher.</p>
+      <ul class="offering-list">
+        <li><span class="check">✓</span><div class="li-text"><strong>C-Level Search</strong><span>CEO, CFO, CHRO, CTO, COO and board-level roles</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Senior Manager & Manager Search</strong><span>VP, Director and Head-of level placements</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Recruitment Machine Development</strong><span>Build scalable in-house hiring processes from scratch</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Workforce Planning</strong><span>Design dynamic hiring roadmaps for scaling businesses</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Onboarding Support</strong><span>We stay engaged through the first 90 days post-placement</span></div></li>
+      </ul>
+      <a href="for-employers.html#callback" class="btn-cta">Start a Search →</a>
+      <a href="for-employers.html" class="btn-outline">Learn More</a>
+    </div>
+    <div class="visual-card">
+      <h3>What makes us different</h3>
+      <div class="vc-stat"><div class="vc-num">90%</div><div class="vc-label">Placement success rate across all mandates</div></div>
+      <div class="vc-stat"><div class="vc-num">2.6w</div><div class="vc-label">Average time to deliver a shortlist</div></div>
+      <div class="vc-stat"><div class="vc-num">35+</div><div class="vc-label">Engagements successfully delivered</div></div>
+      <div class="vc-stat"><div class="vc-num">3</div><div class="vc-label">Regions: Turkey, UAE, United Kingdom</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 HR Strategy -->
+<section class="svc-section" id="hr-strategy">
+  <div class="svc-inner reverse">
+    <div>
+      <div class="svc-label">02 — HR Strategy</div>
+      <h2>Build the HR Infrastructure Your Business Needs to Scale</h2>
+      <p>We design and implement holistic HR strategies that align your organisation with its vision — from values and culture to performance systems and goal management.</p>
+      <ul class="offering-list">
+        <li><span class="check">✓</span><div class="li-text"><strong>Mission, Vision & Strategy Alignment</strong><span>Root your organisation's direction in purpose and ambition</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Values Identification</strong><span>Define the principles that drive culture and decision-making</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>OKR & Goal Management</strong><span>Implement performance systems that enable continuous progress</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Organisational Design</strong><span>Structure your teams for maximum efficiency and clarity</span></div></li>
+      </ul>
+      <a href="for-employers.html#callback" class="btn-cta">Request a Consultation →</a>
+    </div>
+    <div class="visual-card blue-bg">
+      <h3>Our approach</h3>
+      <div class="vc-stat"><div class="vc-num" style="font-size:20px;color:#fff">📋</div><div class="vc-label"><strong style="color:#fff;display:block;margin-bottom:4px">Always facts first</strong>Every engagement starts with a rigorous, data-driven assessment — not assumptions.</div></div>
+      <div class="vc-stat"><div class="vc-num" style="font-size:20px;color:#fff">🤝</div><div class="vc-label"><strong style="color:#fff;display:block;margin-bottom:4px">Joint recommendations</strong>Initial plans are built together with your team — not handed over from a slide deck.</div></div>
+      <div class="vc-stat"><div class="vc-num" style="font-size:20px;color:#fff">⚙️</div><div class="vc-label"><strong style="color:#fff;display:block;margin-bottom:4px">Practical solutions</strong>Everything we design can be implemented in your real operational context.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Momentum Map -->
+<section class="svc-section" id="momentum-map">
+  <div class="svc-inner">
+    <div>
+      <div class="svc-label">03 — Momentum Map</div>
+      <h2>See What's Really Happening Inside Your Organisation</h2>
+      <p>Momentum Map combines workforce analytics, engagement data and leadership assessment to give you a complete picture of where you are — and a clear roadmap for where to go.</p>
+      <ul class="offering-list">
+        <li><span class="check">✓</span><div class="li-text"><strong>Workforce Analytics & Feedback Integration</strong><span>Data-driven analysis of trends and improvement areas, with industry benchmarks</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Employee Satisfaction & Engagement</strong><span>Deep-dive into employee experience and culture health</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Leadership & Team Effectiveness</strong><span>Evaluate leadership performance and team dynamics</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Strategic Growth Recommendations</strong><span>Customised action plans benchmarked against your industry</span></div></li>
+      </ul>
+      <a href="for-employers.html#callback" class="btn-cta">Get a Momentum Map →</a>
+    </div>
+    <div class="visual-card teal-bg">
+      <h3>What you'll walk away with</h3>
+      <div class="vc-stat"><div class="vc-label" style="font-size:15px"><strong style="color:#fff;display:block;margin-bottom:4px">📊 A complete organisational snapshot</strong>Strengths, blind spots and team dynamics — all in one report</div></div>
+      <div class="vc-stat"><div class="vc-label" style="font-size:15px"><strong style="color:#fff;display:block;margin-bottom:4px">📈 Industry benchmark comparison</strong>See how your organisation stacks up against sector peers</div></div>
+      <div class="vc-stat"><div class="vc-label" style="font-size:15px"><strong style="color:#fff;display:block;margin-bottom:4px">🗺️ A prioritised growth roadmap</strong>Concrete next steps, ranked by impact and feasibility</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 Leadership Academy -->
+<section class="svc-section" id="leadership-academy">
+  <div class="svc-inner reverse">
+    <div>
+      <div class="svc-label">04 — Leadership Academy</div>
+      <h2>Develop Leaders Who Inspire, Not Just Manage</h2>
+      <p>Our Leadership Academy delivers psychologically-grounded training designed to build modern, impactful leadership — for emerging talent and seasoned executives alike.</p>
+      <ul class="offering-list">
+        <li><span class="check">✓</span><div class="li-text"><strong>Leadership Development Programs</strong><span>Comprehensive training for transformative leadership capability</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>1-to-1 Executive Coaching</strong><span>Personalised coaching to enhance decision-making and resilience</span></div></li>
+      </ul>
+      <a href="for-employers.html#callback" class="btn-cta">Explore Programs →</a>
+    </div>
+    <div class="visual-card">
+      <h3>Academy modules</h3>
+      <div class="academy-grid">
+        <div class="academy-pill">Change Management</div>
+        <div class="academy-pill">Trust-Building</div>
+        <div class="academy-pill">Conflict Management</div>
+        <div class="academy-pill">Emotional Agility</div>
+        <div class="academy-pill">Feedback Culture</div>
+        <div class="academy-pill">OKR & SMART Goals</div>
+        <div class="academy-pill">Persuasion & Negotiation</div>
+        <div class="academy-pill">Corporate Culture</div>
+        <div class="academy-pill">Neuroscience for Leaders</div>
+        <div class="academy-pill">Leaders' Mental Health</div>
+        <div class="academy-pill">Managing Without Authority</div>
+        <div class="academy-pill">Design Thinking</div>
+        <div class="academy-pill">Emotional Intelligence</div>
+        <div class="academy-pill">High-Performance Teams</div>
+        <div class="academy-pill">Time Management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Catalyst Lead -->
+<section class="svc-section" id="catalyst-lead">
+  <div class="svc-inner">
+    <div>
+      <div class="svc-label">05 — Catalyst Lead Assessment</div>
+      <h2>A Smarter Way to Evaluate Leadership</h2>
+      <p>Our proprietary leadership assessment model provides a comprehensive evaluation of leadership effectiveness by combining self-perception and 360° feedback. Used in executive hiring, promotion decisions, and ongoing development.</p>
+      <ul class="offering-list">
+        <li><span class="check">✓</span><div class="li-text"><strong>Executive Hiring Assessment</strong><span>Evaluate shortlisted candidates for cultural and strategic fit</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Internal Promotion Decisions</strong><span>Identify strengths, development areas and leadership potential</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Individual Growth Roadmaps</strong><span>Personalised development plans for new or promoted leaders</span></div></li>
+        <li><span class="check">✓</span><div class="li-text"><strong>Team Dynamics Evaluation</strong><span>Uncover collective strengths, gaps and alignment issues</span></div></li>
+      </ul>
+      <a href="for-employers.html#callback" class="btn-cta">Request an Assessment →</a>
+    </div>
+    <div class="visual-card blue-bg">
+      <h3>Assessment dimensions</h3>
+      <div class="dimension-grid">
+        <div class="dim-card"><div class="dim-icon">🧭</div><div class="dim-label">Strategic Thinking</div></div>
+        <div class="dim-card"><div class="dim-icon">🤝</div><div class="dim-label">Team Leadership</div></div>
+        <div class="dim-card"><div class="dim-icon">💬</div><div class="dim-label">Communication</div></div>
+        <div class="dim-card"><div class="dim-icon">⚡</div><div class="dim-label">Execution</div></div>
+        <div class="dim-card"><div class="dim-icon">🔄</div><div class="dim-label">Adaptability</div></div>
+        <div class="dim-card"><div class="dim-icon">🌱</div><div class="dim-label">Development Mindset</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img src="logo.png" alt="Catalyst People Partners" style="height:28px;filter:brightness(0) invert(1);margin-bottom:14px">
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7">Global boutique HR consultancy — executive search, HR strategy and leadership development across Turkey, UAE and UK.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#executive-search">Executive Search</a></li>
+          <li><a href="#hr-strategy">HR Strategy</a></li>
+          <li><a href="#momentum-map">Momentum Map</a></li>
+          <li><a href="#leadership-academy">Leadership Academy</a></li>
+          <li><a href="#catalyst-lead">Catalyst Lead</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:nil@cppartners.co">nil@cppartners.co</a></li>
+          <li><a href="for-candidates.html">For Candidates</a></li>
+          <li><a href="for-employers.html">For Employers</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Catalyst People Partners. All rights reserved.</span>
+      <span>cppartners.co</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

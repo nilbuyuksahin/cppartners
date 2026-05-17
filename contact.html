@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch with Catalyst People Partners — Istanbul, London and Sharjah.">
+<title>Contact | Catalyst People Partners</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--navy:#0B213C;--teal:#2A817B;--blue:#286986;--teal-light:#E8F4F3;--gray:#F7F8FA;--text:#1A1A2E;--muted:#5F6B7A;--border:#E2E8F0;--white:#FFFFFF}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.7}
+  a{text-decoration:none;color:inherit}
+
+  nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 5%}
+  .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo img{height:36px;width:auto}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-cta{background:var(--navy);color:var(--white)!important;padding:10px 20px;border-radius:6px;font-weight:600!important}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
+
+  .page-hero{background:var(--navy);color:var(--white);padding:72px 5%}
+  .page-hero-inner{max-width:1200px;margin:auto}
+  .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px}
+  .breadcrumb a{color:rgba(255,255,255,0.5)}
+  .page-hero h1{font-size:40px;font-weight:700;line-height:1.2;margin-bottom:18px;letter-spacing:-0.5px}
+  .page-hero h1 em{color:#7ECDC8;font-style:normal}
+  .page-hero p{font-size:17px;color:rgba(255,255,255,0.75);max-width:560px}
+
+  .section-tag{font-size:13px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .section-title{font-size:34px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:-0.5px}
+
+  /* CONTACT MAIN */
+  .contact-main{padding:80px 5%;background:var(--white)}
+  .contact-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
+
+  /* LEFT SIDE INFO */
+  .contact-info h2{font-size:26px;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .contact-info p{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.8}
+  .contact-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+  .contact-block:last-child{border-bottom:none;margin-bottom:0}
+  .contact-block h4{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+  .c-icon{font-size:18px;flex-shrink:0;margin-top:2px}
+  .c-text{font-size:14px;color:var(--muted);line-height:1.6}
+  .c-text a{color:var(--teal)}
+  .c-text strong{display:block;color:var(--navy);font-size:13px;margin-bottom:2px}
+  .response-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-light);border:1px solid rgba(42,129,123,0.2);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--teal);font-weight:600;margin-top:8px}
+
+  /* FORM */
+  .form-card{background:var(--gray);border-radius:16px;padding:40px}
+  .form-card h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .form-card .form-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+  .form-tabs{display:flex;gap:0;background:var(--white);border-radius:10px;padding:4px;margin-bottom:28px;border:1px solid var(--border)}
+  .form-tab{flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;color:var(--muted);border-radius:7px;cursor:pointer;transition:.2s}
+  .form-tab.active{background:var(--navy);color:var(--white)}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-full{grid-column:1/-1}
+  label{font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;color:var(--text);background:var(--white);outline:none;font-family:inherit;transition:.2s}
+  input:focus,select:focus,textarea:focus{border-color:var(--teal)}
+  textarea{resize:vertical;min-height:120px}
+  .form-submit{margin-top:20px}
+  .btn-submit{width:100%;background:var(--teal);color:var(--white);padding:14px;border-radius:8px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:.2s}
+  .btn-submit:hover{background:#1f6460}
+  .privacy-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+
+  /* FORM PANELS */
+  .form-panel{display:none}
+  .form-panel.active{display:block}
+
+  /* OFFICES */
+  .offices{padding:80px 5%;background:var(--gray)}
+  .offices-inner{max-width:1200px;margin:auto}
+  .offices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .office-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:32px;transition:.2s}
+  .office-card:hover{border-color:var(--teal)}
+  .office-flag{font-size:32px;margin-bottom:14px}
+  .office-card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px}
+  .office-detail{display:flex;gap:10px;margin-bottom:8px;font-size:14px;color:var(--muted)}
+  .office-detail span:first-child{flex-shrink:0}
+
+  /* CTA STRIP */
+  .cta-strip{padding:64px 5%;background:var(--navy);text-align:center;color:var(--white)}
+  .cta-strip h2{font-size:28px;font-weight:700;margin-bottom:12px}
+  .cta-strip p{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:28px}
+  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-teal{background:var(--teal);color:var(--white);padding:13px 28px;border-radius:8px;font-weight:600;font-size:15px;display:inline-block;transition:.2s}
+  .btn-teal:hover{background:#1f6460}
+  .btn-white{background:var(--white);color:var(--navy);padding:13px 28px;border-radius:8px;font-weight:600;font-size:15px;display:inline-block;transition:.2s}
+  .btn-white:hover{background:#f0f0f0}
+
+  footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 5% 28px}
+  .footer-inner{max-width:1200px;margin:auto}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-col h4{font-size:13px;font-weight:700;color:var(--white);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{margin-bottom:10px}
+  .footer-col ul li a{font-size:14px;color:rgba(255,255,255,0.6);transition:.2s}
+  .footer-col ul li a:hover{color:var(--white)}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;font-size:13px}
+
+  @media(max-width:900px){
+    .contact-inner{grid-template-columns:1fr}
+    .offices-grid{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .form-full{grid-column:1}
+    .footer-top{grid-template-columns:1fr}
+    .page-hero h1{font-size:30px}
+    .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px 5%;border-bottom:1px solid var(--border);gap:16px}
+    .nav-links.open{display:flex}
+    .hamburger{display:flex}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Catalyst People Partners">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="for-candidates.html">For Candidates</a>
+      <a href="for-employers.html">For Employers</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta" style="background:var(--teal)">Get in Touch</a>
+    </div>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> › <span style="color:rgba(255,255,255,0.8)">Contact</span></p>
+    <h1>Let's Start a <em>Conversation</em></h1>
+    <p>Whether you're hiring, exploring your next move, or just want to understand how we work — we'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="contact-main">
+  <div class="contact-inner">
+
+    <!-- LEFT: Contact info -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>We respond to all enquiries within one business day.</p>
+
+      <div class="contact-block">
+        <h4>Direct Contact</h4>
+        <div class="contact-item">
+          <div class="c-icon">✉️</div>
+          <div class="c-text">
+            <strong>Nil Büyükşahin — Founder</strong>
+            <a href="mailto:nil@cppartners.co">nil@cppartners.co</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">✉️</div>
+          <div class="c-text">
+            <strong>Nur Haslak — Business Development</strong>
+            <a href="mailto:nurhaslak@cppartners.co">nurhaslak@cppartners.co</a>
+          </div>
+        </div>
+        <div class="response-badge">⚡ We respond within 1 business day</div>
+      </div>
+
+      <div class="contact-block">
+        <h4>Book a Meeting</h4>
+        <div class="contact-item">
+          <div class="c-icon">📅</div>
+          <div class="c-text">
+            Prefer to pick a time directly?
+            <br><a href="https://calendly.com/nil-cppartners/linkedin-services-page-meeting" target="_blank" style="font-weight:600">Book via Calendly →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <h4>Our Offices</h4>
+        <div class="contact-item">
+          <div class="c-icon">🇹🇷</div>
+          <div class="c-text"><strong>Istanbul</strong>Levent, Karanfil Sokağı No:13, Beşiktaş</div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">🇦🇪</div>
+          <div class="c-text"><strong>Sharjah, UAE</strong>Sharjah Media City, Shams Free Zone</div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">🇬🇧</div>
+          <div class="c-text"><strong>London, UK</strong>SE1, Crosby Row 19</div>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <h4>Follow Us</h4>
+        <div class="contact-item">
+          <div class="c-icon">💼</div>
+          <div class="c-text"><a href="https://linkedin.com" target="_blank" style="font-weight:600;color:var(--teal)">LinkedIn — Catalyst People Partners →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form with tabs -->
+    <div class="form-card">
+      <h3>Send us a message</h3>
+      <p class="form-sub">Select who you are and we'll make sure the right person gets back to you.</p>
+
+      <div class="form-tabs">
+        <div class="form-tab active" onclick="switchTab('employer')">I'm an Employer</div>
+        <div class="form-tab" onclick="switchTab('candidate')">I'm a Candidate</div>
+        <div class="form-tab" onclick="switchTab('other')">Other</div>
+      </div>
+
+      <!-- EMPLOYER FORM -->
+      <div class="form-panel active" id="panel-employer">
+        <div class="form-grid">
+          <div><label>First Name</label><input type="text" placeholder="Ali"></div>
+          <div><label>Last Name</label><input type="text" placeholder="Demir"></div>
+          <div><label>Email</label><input type="email" placeholder="ali@company.com"></div>
+          <div><label>Phone</label><input type="tel" placeholder="+90 5xx xxx xx xx"></div>
+          <div><label>Company</label><input type="text" placeholder="Company name"></div>
+          <div>
+            <label>Service Needed</label>
+            <select>
+              <option value="">Select</option>
+              <option>Executive Search</option>
+              <option>HR Strategy</option>
+              <option>Momentum Map</option>
+              <option>Leadership Academy</option>
+              <option>Multiple / Not sure</option>
+            </select>
+          </div>
+          <div class="form-full">
+            <label>Tell us about your need</label>
+            <textarea placeholder="e.g. We're looking for a CFO to join us as we scale. The role is based in Istanbul..."></textarea>
+          </div>
+          <div class="form-full">
+            <label>Timeline</label>
+            <select>
+              <option value="">How soon?</option>
+              <option>Urgently (within 4 weeks)</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+              <option>Planning ahead</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button class="btn-submit">Send Message →</button>
+          <p class="privacy-note">We'll respond within 1 business day. Your data is never shared.</p>
+        </div>
+      </div>
+
+      <!-- CANDIDATE FORM -->
+      <div class="form-panel" id="panel-candidate">
+        <div class="form-grid">
+          <div><label>First Name</label><input type="text" placeholder="Mehmet"></div>
+          <div><label>Last Name</label><input type="text" placeholder="Yılmaz"></div>
+          <div><label>Email</label><input type="email" placeholder="mehmet@email.com"></div>
+          <div><label>Phone</label><input type="tel" placeholder="+90 5xx xxx xx xx"></div>
+          <div><label>Current Title</label><input type="text" placeholder="e.g. HR Director"></div>
+          <div>
+            <label>I'm looking for</label>
+            <select>
+              <option value="">Select</option>
+              <option>New job opportunities</option>
+              <option>CV Review</option>
+              <option>Interview Coaching</option>
+              <option>International Career Advice</option>
+              <option>Assessment Centre Prep</option>
+            </select>
+          </div>
+          <div class="form-full">
+            <label>A bit about you</label>
+            <textarea placeholder="Tell us about your background, what you're looking for, and any preferences..."></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button class="btn-submit">Send Message →</button>
+          <p class="privacy-note">We'll respond within 1 business day. Your data is never shared.</p>
+        </div>
+      </div>
+
+      <!-- OTHER FORM -->
+      <div class="form-panel" id="panel-other">
+        <div class="form-grid">
+          <div><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div><label>Email</label><input type="email" placeholder="your@email.com"></div>
+          <div class="form-full">
+            <label>Message</label>
+            <textarea placeholder="How can we help?"></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button class="btn-submit">Send Message →</button>
+          <p class="privacy-note">We'll respond within 1 business day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OFFICES -->
+<section class="offices">
+  <div class="offices-inner">
+    <p class="section-tag">Our Locations</p>
+    <h2 class="section-title">Find Us</h2>
+    <div class="offices-grid">
+      <div class="office-card">
+        <div class="office-flag">🇹🇷</div>
+        <h3>Istanbul, Turkey</h3>
+        <div class="office-detail"><span>📍</span><span>Levent, Karanfil Sokağı No:13, Beşiktaş / İstanbul</span></div>
+        <div class="office-detail"><span>✉️</span><span><a href="mailto:nil@cppartners.co" style="color:var(--teal)">nil@cppartners.co</a></span></div>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">🇦🇪</div>
+        <h3>Sharjah, UAE</h3>
+        <div class="office-detail"><span>📍</span><span>Sharjah Media City, Shams Free Zone</span></div>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">🇬🇧</div>
+        <h3>London, UK</h3>
+        <div class="office-detail"><span>📍</span><span>SE1, Crosby Row 19, London</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>Not sure where to start?</h2>
+  <p>Book a free 20-minute call and we'll figure out together how we can help.</p>
+  <div class="cta-btns">
+    <a href="https://calendly.com/nil-cppartners/linkedin-services-page-meeting" target="_blank" class="btn-teal">Book a Call →</a>
+    <a href="for-employers.html" class="btn-white">I'm an Employer</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img src="logo.png" alt="Catalyst People Partners" style="height:28px;filter:brightness(0) invert(1);margin-bottom:14px">
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7">Global boutique HR consultancy — executive search, HR strategy and leadership development across Turkey, UAE and UK.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="for-candidates.html">For Candidates</a></li>
+          <li><a href="for-employers.html">For Employers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:nil@cppartners.co">nil@cppartners.co</a></li>
+          <li><a href="https://calendly.com/nil-cppartners/linkedin-services-page-meeting" target="_blank">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Catalyst People Partners. All rights reserved.</span>
+      <span>cppartners.co</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchTab(type){
+  document.querySelectorAll('.form-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.form-panel').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-'+type).classList.add('active');
+}
+</script>
+</body>
+</html>
